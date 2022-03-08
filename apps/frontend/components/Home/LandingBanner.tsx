@@ -11,7 +11,7 @@ const LandingBanner = () => {
       </div>
       <div className="basis-3/5 relative">
         <Image
-          src={"/images/landing_page.png"}
+          src={"/images/landing_page.webp"}
           objectFit="cover"
           layout="responsive"
           height={598}
