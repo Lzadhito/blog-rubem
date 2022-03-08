@@ -1,6 +1,6 @@
 import { AppProps } from "next/app";
-import Navbar from "../lib/components/Navbar";
-import "../styles/globals.css";
+import Navbar from "@/lib/components/Navbar";
+import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
