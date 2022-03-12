@@ -6,7 +6,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Navbar />
-      <Component {...pageProps} />
+      <main className="pt-20">
+        <div id="negPadWrapper" className="-mt-1">
+          <Component {...pageProps} />
+        </div>
+      </main>
     </>
   );
 }

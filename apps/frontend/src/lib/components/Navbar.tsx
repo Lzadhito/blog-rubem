@@ -1,11 +1,14 @@
+import Link from "next/link";
 import { FiSearch } from "react-icons/fi";
 
 const Navbar = () => {
   return (
     <nav className="flex flex-row shadow-navbar fixed w-full py-4 px-14 bg-white z-50 justify-between">
-      <button className="py-2.5 px-6 rounded-full bg-bgButton text-sm font-bold text-seed">
-        Home
-      </button>
+      <Link href="/">
+        <button className="py-2.5 px-6 rounded-full bg-bgButton text-sm font-bold text-seed">
+          Home
+        </button>
+      </Link>
       <div className="input-group relative flex flex-row self-center">
         <input
           type="search"
