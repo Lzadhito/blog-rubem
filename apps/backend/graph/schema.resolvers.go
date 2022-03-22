@@ -6,17 +6,28 @@ package graph
 import (
 	"context"
 	"fmt"
+	"math/rand"
+	"time"
 
 	"github.com/Lzadhito/blog-rubem/apps/backend/graph/generated"
 	"github.com/Lzadhito/blog-rubem/apps/backend/graph/model"
 )
 
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *mutationResolver) CreateArticle(ctx context.Context, input model.NewArticle) (*model.Article, error) {
+	t := time.Now()
+	article := &model.Article{
+		ID:          fmt.Sprintf("T%d", rand.Int()),
+		Title:       input.Title,
+		Content:     input.Content,
+		CreatedDate: t.String(),
+		EditedDate:  t.String(),
+	}
+	r.articles = append(r.articles, article)
+	return article, nil
 }
 
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+func (r *queryResolver) Articles(ctx context.Context) ([]*model.Article, error) {
+	return r.articles, nil
 }
 
 // Mutation returns generated.MutationResolver implementation.
